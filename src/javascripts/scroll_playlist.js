@@ -1,0 +1,1 @@
+let goToBottom = setInterval(() => window.scrollBy(0, 400), 1000);
