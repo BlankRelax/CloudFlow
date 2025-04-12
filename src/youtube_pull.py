@@ -46,6 +46,7 @@ class YoutubePull(RPA_BASE):
         save = json.dumps(rf'{save_path}/{file_name}')
         self.driver.execute_script("""
         let arrayVideos = [];
+        arrayVideos.push('Title' + ';' + 'Link');
         console.log(" ".repeat(50));
         const links = document.querySelectorAll('a');
         for (const link of links) {
