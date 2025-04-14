@@ -6,7 +6,7 @@ class YoutubeToMp3:
         pass
 
     def load_data(self):
-        df = pd.read_csv(r'C:\Users\hassaans studybook\Downloads\_E__Repositories_CloudFlow_data_HolyQuraan_data_1204252205_.csv',
+        df = pd.read_csv(r'C:\Users\hassaans studybook\Downloads\_E__Repositories_CloudFlow_data_HolyQuraan_data_1404252128_.csv',
                           sep=';',
                           )
         # df = pd.read_csv(r'C:\Users\hassaans studybook\Downloads\test.csv', sep=';')
