@@ -4,7 +4,7 @@ class CsvPreprocessor:
 
     def __init__(self, filepath:str):
         self.fp=filepath
-        self.token_sep='*<>*'
+        self.token_sep='<*>'
     
     def process(self):
 
@@ -13,17 +13,18 @@ class CsvPreprocessor:
         headers = self.raw_txt.split(self.token_sep)[0]
         content = self.raw_txt.split(self.token_sep)[1:]
 
-        with open(f'{self.fp}', 'w') as nf:
-            for line in content[:3]:
+        clean_fp=''.join(self.fp.split('.')[:-1]+['.txt'])
+        with open(f'{clean_fp}', 'w', encoding='utf-8') as nf:
+            nf.write(f'{headers}\n')
+            for line in content:
                 print(line)
                 nf.write(f'{line}\n')
         
-        print(f'{content[0]}\n{content[1]}')
 
 
     def meta_raw_txt(self):
         print(len(self.raw_txt))
 
-cp=CsvPreprocessor(r'C:\Users\hassaans studybook\Downloads\_E__Repositories_CloudFlow_data_HolyQuraan_data_1404252127_.csv')
+cp=CsvPreprocessor(r"C:\Users\hassa\Downloads\_E__Repositories_CloudFlow_data_HolyQuraan_data_1804252159_.csv")
 cp.process()
 cp.meta_raw_txt()

@@ -20,7 +20,7 @@ class YoutubePull(RPA_BASE):
             console.log(link.title + '\t' + link.href);
         }
         }
-        let data = arrayVideos.join('  ');
+        let data = arrayVideos.join('<*>');
         let blob = new Blob([data], {type: 'text/csv'});
         let elem = window.document.createElement('a');
         elem.href = window.URL.createObjectURL(blob);
